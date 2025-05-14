@@ -6,21 +6,30 @@ import path from "path";
 import {base64} from "rollup-plugin-base64";
 import copy from "rollup-plugin-copy";
 import filesize from "rollup-plugin-filesize";
+import wasm from '@rollup/plugin-wasm';
+import url from '@rollup/plugin-url';
 
 const config = (dim, features_postfix) => ({
     input: `builds/${features_postfix}/gen${dim}/rapier.ts`,
     output: [
+        // {
+        //     file: `builds/${features_postfix}/pkg/rapier.es.js`,
+        //     format: "es",
+        //     sourcemap: true,
+        //     exports: "named",
+        // },
+        // {
+        //     file: `builds/${features_postfix}/pkg/rapier.cjs.js`,
+        //     format: "cjs",
+        //     sourcemap: true,
+        //     exports: "named",
+        // },
         {
-            file: `builds/${features_postfix}/pkg/rapier.es.js`,
-            format: "es",
+            file: `builds/${features_postfix}/pkg/rapier.umd.js`,
+            format: 'umd',
+            name: 'RAPIER',
             sourcemap: true,
-            exports: "named",
-        },
-        {
-            file: `builds/${features_postfix}/pkg/rapier.cjs.js`,
-            format: "cjs",
-            sourcemap: true,
-            exports: "named",
+            exports: 'named',
         },
     ],
     plugins: [
@@ -53,9 +62,15 @@ const config = (dim, features_postfix) => ({
             ],
         }),
         base64({include: "**/*.wasm"}),
-        terser(),
+        // terser(),
         nodeResolve(),
         commonjs(),
+        // wasm(),
+        // url({
+        //     include: ['**/*.wasm'],
+        //     limit: 0,
+        //     fileName: '[name][extname]'
+        // }),
         typescript({
             tsconfig: path.resolve(
                 __dirname,
@@ -69,10 +84,10 @@ const config = (dim, features_postfix) => ({
 });
 
 export default [
-    config("2d", "2d"),
+    // config("2d", "2d"),
     config("2d", "2d-deterministic"),
-    config("2d", "2d-simd"),
-    config("3d", "3d"),
-    config("3d", "3d-deterministic"),
-    config("3d", "3d-simd"),
+    // config("2d", "2d-simd"),
+    // config("3d", "3d"),
+    // config("3d", "3d-deterministic"),
+    // config("3d", "3d-simd"),
 ];

@@ -27,9 +27,12 @@ find gen3d/ -type f -print0 | LC_ALL=C xargs -0 sed -i.bak '\:#if DIM2:,\:#endif
 find gen2d/ -type f -name '*.bak' | xargs rm
 find gen3d/ -type f -name '*.bak' | xargs rm
 
+#cjh for features_set in \
+#"2" "2 deterministic" "2 simd" \
+#"3" "3 deterministic" "3 simd"
+
 for features_set in \
-"2" "2 deterministic" "2 simd" \
-"3" "3 deterministic" "3 simd"
+"2 deterministic"
 do
 
   set -- $features_set # Convert the "tuple" into the param args $1 $2...
