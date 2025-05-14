@@ -11,11 +11,14 @@ gen2d/
 gen3d/
 docs
 *.swp
-*.d.ts
+#*.d.ts
 
 # Made by the prepare_builds crate
 #builds/*
 #!builds/prepare_builds
+!builds/rapier2d-deterministic/pkg
+*.wasm
+*.js.map
 
 # compat generated builds
 rapier-compat/builds/
