@@ -61,14 +61,14 @@ export declare class RigidBody {
      * @param locked - If `true`, this rigid-body will no longer translate due to forces and impulses.
      * @param wakeUp - If `true`, this rigid-body will be automatically awaken if it is currently asleep.
      */
-    lockTranslations(locked: boolean, wakeUp: boolean): any;
+    lockTranslations(locked: boolean, wakeUp: boolean): void;
     /**
      * Locks or unlocks the ability of this rigid-body to rotate.
      *
      * @param locked - If `true`, this rigid-body will no longer rotate due to torques and impulses.
      * @param wakeUp - If `true`, this rigid-body will be automatically awaken if it is currently asleep.
      */
-    lockRotations(locked: boolean, wakeUp: boolean): any;
+    lockRotations(locked: boolean, wakeUp: boolean): void;
     /**
      * Locks or unlocks the ability of this rigid-body to translation along individual coordinate axes.
      *
@@ -76,7 +76,7 @@ export declare class RigidBody {
      * @param enableY - If `false`, this rigid-body will no longer rotate due to torques and impulses, along the Y coordinate axis.
      * @param wakeUp - If `true`, this rigid-body will be automatically awaken if it is currently asleep.
      */
-    setEnabledTranslations(enableX: boolean, enableY: boolean, wakeUp: boolean): any;
+    setEnabledTranslations(enableX: boolean, enableY: boolean, wakeUp: boolean): void;
     /**
      * Locks or unlocks the ability of this rigid-body to translation along individual coordinate axes.
      *
@@ -330,7 +330,7 @@ export declare class RigidBody {
     /**
      * Set a new status for this rigid-body: static, dynamic, or kinematic.
      */
-    setBodyType(type: RigidBodyType, wakeUp: boolean): any;
+    setBodyType(type: RigidBodyType, wakeUp: boolean): void;
     /**
      * Is this rigid-body sleeping?
      */

@@ -16,9 +16,9 @@
     "rapier_wasm2d_bg.js",
     "rapier_wasm2d.d.ts"
   ],
-  "module": "rapier_wasm2d.js",
+  "module": "rapier.js",
   "homepage": "https://rapier.rs",
-  "types": "rapier_wasm2d.d.ts",
+  "types": "rapier.d.ts",
   "keywords": [
     "physics",
     "dynamics",

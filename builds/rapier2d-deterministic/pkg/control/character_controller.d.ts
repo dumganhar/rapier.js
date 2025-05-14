@@ -46,7 +46,7 @@ export declare class KinematicCharacterController {
     /**
      * Sets the direction that goes "up". Used to determine where the floor is, and the floor’s angle.
      */
-    setUp(vector: Vector): any;
+    setUp(vector: Vector): void;
     applyImpulsesToDynamicBodies(): boolean;
     setApplyImpulsesToDynamicBodies(enabled: boolean): void;
     /**
@@ -115,7 +115,7 @@ export declare class KinematicCharacterController {
     /**
      * Disable automatically stepping over small objects.
      */
-    disableAutostep(): any;
+    disableAutostep(): void;
     /**
      * The maximum angle (radians) between the floor’s normal and the `up` vector that the
      * character is able to climb.

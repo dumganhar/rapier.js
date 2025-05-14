@@ -5,15 +5,23 @@
     "exports": "./pkg",
     "types": "./pkg/rapier.d.ts",
     "scripts": {
-        "build": "npm run clean && npm run build:wasm && npm run build:ts && npm run build:doc",
+        "build": "npm run clean && npm run build:wasm && npm run build:ts && npm run build:doc && npm run bundle && npm run bundle:dts",
         "build:doc": "typedoc --tsconfig tsconfig_typedoc.json",
         "build:wasm": "sh ./build_rust.sh",
         "build:ts": "sh ./build_typescript.sh",
+        "bundle": "rollup -c",
+        "bundle:dts": "api-extractor run",
         "clean": "rimraf pkg"
     },
     "//": "Better keep rimraf version in sync with wasm-pack, see https://github.com/rustwasm/wasm-pack/issues/1444",
     "devDependencies": {
+        "@microsoft/api-extractor": "^7.52.8",
+        "@rollup/plugin-commonjs": "^25.0.4",
+        "@rollup/plugin-node-resolve": "^15.2.1",
+        "@rollup/plugin-url": "^8.0.2",
+        "@rollup/plugin-wasm": "^6.2.2",
         "rimraf": "^3.0.2",
+        "rollup": "^3.29.4",
         "typedoc": "^0.25.13"
     },
     "dependencies": {

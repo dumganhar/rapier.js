@@ -194,7 +194,7 @@ export declare class Collider {
      *
      * @param thickness - The contact skin thickness.
      */
-    setContactSkin(thickness: number): any;
+    setContactSkin(thickness: number): void;
     /**
      * Get the physics hooks active for this collider.
      */
@@ -228,7 +228,7 @@ export declare class Collider {
      *
      * @param threshold - The new force threshold.
      */
-    setContactForceEventThreshold(threshold: number): any;
+    setContactForceEventThreshold(threshold: number): void;
     /**
      * The total force magnitude beyond which a contact force event can be emitted.
      */
