@@ -24,8 +24,15 @@ const config = (dim, features_postfix) => ({
         //     sourcemap: true,
         //     exports: "named",
         // },
+        // {
+        //     file: `builds/${features_postfix}/pkg/rapier.umd.js`,
+        //     format: 'umd',
+        //     name: 'RAPIER',
+        //     sourcemap: true,
+        //     exports: 'named',
+        // },
         {
-            file: `builds/${features_postfix}/pkg/rapier.umd.js`,
+            file: `builds/${features_postfix}/pkg/rapier${dim}-jsb.js`,
             format: 'umd',
             name: 'RAPIER',
             sourcemap: true,
@@ -78,6 +85,9 @@ const config = (dim, features_postfix) => ({
             ),
             sourceMap: true,
             inlineSources: true,
+            compilerOptions: {
+                target: "ES2017"
+            }
         }),
         filesize(),
     ],
@@ -88,6 +98,6 @@ export default [
     config("2d", "2d-deterministic"),
     // config("2d", "2d-simd"),
     // config("3d", "3d"),
-    // config("3d", "3d-deterministic"),
+    config("3d", "3d-deterministic"),
     // config("3d", "3d-simd"),
 ];

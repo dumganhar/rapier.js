@@ -15,7 +15,7 @@
         "build-genjs": "sh ./gen_src.sh",
         "build-js": "rollup --config rollup.config.js --bundleConfigAsCjs",
         "fix-raw-file": "sh ./fix_raw_file.sh",
-        "build": "npm run clean && npm run build-rust-2d-deterministic && npm run build-genjs && npm run build-js && npm run fix-raw-file",
+        "build": "npm run clean && npm run build-rust-2d-deterministic && npm run build-rust-3d-deterministic && npm run build-genjs && npm run build-js && npm run fix-raw-file",
         "clean": "rimraf gen2d gen3d builds",
         "test": "jest --detectOpenHandles",
         "all": "npm run build",

@@ -1,6 +1,6 @@
 {
     "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
-    "mainEntryPointFilePath": "./builds/2d-deterministic/pkg/rapier.d.ts",
+    "mainEntryPointFilePath": "./builds/3d-deterministic/pkg/rapier.d.ts",
     "bundledPackages": [],
     "compiler": {
       "tsconfigFilePath": "./tsconfig.json"
@@ -13,7 +13,7 @@
     },
     "dtsRollup": {
       "enabled": true,
-      "untrimmedFilePath": "./builds/2d-deterministic/pkg/dts-bundled/rapier.d.ts"
+      "untrimmedFilePath": "./builds/3d-deterministic/pkg/dts-bundled/rapier3d.d.ts"
     },
     "tsdocMetadata": {
       "enabled": false

@@ -32,7 +32,8 @@ find gen3d/ -type f -name '*.bak' | xargs rm
 #"3" "3 deterministic" "3 simd"
 
 for features_set in \
-"2 deterministic"
+"2 deterministic" \
+"3 deterministic"
 do
 
   set -- $features_set # Convert the "tuple" into the param args $1 $2...

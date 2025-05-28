@@ -1,9 +1,8 @@
 #!/bin/bash
 
 # features=(non-deterministic deterministic simd)
-# dims=(dim2 dim3)
 features=(deterministic)
-dims=(dim2)
+dims=(dim2 dim3)
 
 for feature in ${features[@]}; do
     for dim in ${dims[@]}; do
